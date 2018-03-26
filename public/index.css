@@ -1,0 +1,37 @@
+.jobsheet {
+	width: 70%;
+}
+#map {
+        height: 400px;
+        width: 100%;
+       }
+
+body {
+	background-image: url("pictures/bg.jpg");
+}
+
+/*Booking Calendar*/
+
+.booking-calendar {
+  .header {
+    .header-content {
+      .icon-previous {}
+      .icon-next {}
+      .month-label {}
+    }
+  }
+
+  .week {
+    &.names {
+      .day-box .day {}
+    }
+
+    .day-box .day {
+      &.different-month {}
+      &.selected {}
+      &.today {}
+      &.booked-day:before {}
+      &.booked-night:after {}
+    }
+  }
+}
