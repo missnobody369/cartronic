@@ -21,7 +21,23 @@ class Search extends Component {
         console.log(error);
       });
   }
+
+  onLogout = (e) =>{
+    e.preventDefault()
+    localStorage.clear()
+    window.location.href = window.location
+  }
   
+  filter = (e) => {
+    e.preventDefault();
+
+    const filter = e.target.value;
+    const $this = this;
+
+
+  }
+
+
   render() {
     const customer_rows = [];
     this.state.customers.map((customer, i) => 
@@ -47,9 +63,12 @@ class Search extends Component {
           )
     );
     return (
+      
 		<div>
+      <li className="nav-item px-lg-4">
+        <a id = "logoutBtn"className="nav-link text-uppercase text-expanded" onClick={this.onLogout} href="/logout">LOGOUT</a>
+      </li>
         <table class="table table-dark">
-          <caption>List of users</caption>
           <thead>
             <tr>
               <th scope="col">Date</th>

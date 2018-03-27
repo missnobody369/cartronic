@@ -123,7 +123,6 @@ router.get('/getusers', (req, res) => {
 });
 
 
-
 router.get('/selectCustomer', (req, res) => {
     const sql = 'SELECT * FROM jobsheet';
     const query = conn.query(sql, (error, results, fields) => {
@@ -133,7 +132,7 @@ router.get('/selectCustomer', (req, res) => {
 });
 
 // Select single user 
-router.get('/getuser/:id', (req, res) => {
+app.get('/getuser/:id', (req, res) => {
     const sql = `SELECT * FROM jobsheet WHERE id = ${req.params.id}`;
     const query = conn.query(sql, (err, result) => {
         if(err) throw err;

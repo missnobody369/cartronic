@@ -19,11 +19,12 @@ class Navbar extends Component {
   //   localStorage.clear()
   //   window.location.href = window.location
   // }
- onLogout = (e) =>{
-   e.preventDefault()
-   localStorage.clear()
-   window.location.href = window.location
- }
+  
+//  onLogout = (e) =>{
+//    e.preventDefault()
+//    localStorage.clear()
+//    window.location.href = window.location
+//  }
   render() {
     return (
 
@@ -57,9 +58,7 @@ class Navbar extends Component {
                 <li className="nav-item px-lg-4">
                   <a className="nav-link text-uppercase text-expanded" href="/login">LOGIN</a>
                 </li>
-                <li className="nav-item px-lg-4">
-                <a className="nav-link text-uppercase text-expanded" onClick={this.onLogout} href="/logout">LOGOUT</a>
-                </li>
+               
               </ul>
             </div>
           </div>
