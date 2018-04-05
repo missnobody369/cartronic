@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Validation from 'react-validation';
 
 
 class JobSheet extends Component {
 
   componentWillMount(){
-    axios.get('http://localhost:3001/api/addclient')
+     axios.get('http://localhost:3001/addclient')
     .then(function (response) {
       console.log(response.data);
+ 
     })
     .catch(function (error) {
       console.log(error);
     });
   }
 
-  onSubmitButton = (e) => {
-    const $this = this;
-    alert("succes");
-  }
-
   render() {
     return (
 
-          <form method="POST" action="http://localhost:3001/api/addclient">
-            <div className="jobsheet container text-white">
-              <h1 className="text-center">JOB SHEET</h1>
+        <form method="POST" action="http://localhost:3001/addclient">
+
+      <div className="jobsheet container text-white">
+              <h1 className="text-center">JOB SHEET... new server</h1>
               <div className="text-right">
                   <label>Date:</label>
                   <input type="date" name="datetoday" required></input>

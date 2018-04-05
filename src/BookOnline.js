@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar';
 class BookOnline extends Component {
  
   render() {
@@ -7,7 +6,7 @@ class BookOnline extends Component {
     
     return (
       <div>
-        <Calendar />
+      
       </div>
     );
   }

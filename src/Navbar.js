@@ -4,27 +4,26 @@ class Navbar extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      logindetails: ''
+    };
   }
 
   componentWillMount(){
-
-
     if(localStorage.user){
-      const userData = JSON.parse(localStorage.user);
+        console.log(localStorage.fullname)
+       const userData = JSON.parse(localStorage.user);
+
+       this.setState({logindetails: userData.fullname})
     }
   }
 
-  // onExit = (e) =>{
-  //   e.preventDefault()
-  //   localStorage.clear()
-  //   window.location.href = window.location
-  // }
+  onExit = (e) => {
+    e.preventDefault()
+    localStorage.clear()
+    window.location.href = window.location
+  }
   
-//  onLogout = (e) =>{
-//    e.preventDefault()
-//    localStorage.clear()
-//    window.location.href = window.location
-//  }
   render() {
     return (
 
@@ -50,14 +49,20 @@ class Navbar extends Component {
                 <li className="nav-item  px-lg-4">
                   <a className="nav-link text-uppercase text-expanded" href="/bookonline">BOOK ONLINE</a>
                 </li>
-                {(localStorage.user === 'admin') ?
+                {(localStorage.fullname === 'admin') ?
                 <li className="nav-item px-lg-4">
                   <a className="nav-link text-uppercase text-expanded" href="/search">SEARCH</a>
                 </li>
                 : null }
+                {(localStorage.token) ? 
+                <li className="nav-item px-lg-4">
+                  <a onClick={this.onExit} className="nav-link text-uppercase text-expanded" href="/logout">LOGOUT</a>
+                </li>
+                : 
                 <li className="nav-item px-lg-4">
                   <a className="nav-link text-uppercase text-expanded" href="/login">LOGIN</a>
                 </li>
+                }
                
               </ul>
             </div>

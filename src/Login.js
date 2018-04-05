@@ -18,7 +18,7 @@ class Login extends Component {
 
 	onEnter = (e) => {
 		e.preventDefault();
-		axios.post('http://localhost:3001/api/login', {
+		 axios.post('http://localhost:3001/login', {
 			username: this.state.username,
 			password: this.state.password
 		})
@@ -31,7 +31,7 @@ class Login extends Component {
 
 	render() {
 		return(
-			<form onSubmit={this.onEnter} style={{"margin":"300px 400px"}}>
+			<form onSubmit={this.onEnter} style={{"margin":"100px 200px"}} className="text-center">
 				<div>
 					<label>USERNAME:</label>
 					<input type="username" name="username" value={this.state.username} onChange={(e) => this.setState({username: e.target.value})} id="username"/>
