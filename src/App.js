@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import SearchInput, {createFilter} from 'react-search-input'
 import Navbar from './Navbar';
 import Header from './Header';
 import Footer from './Footer';
-
 import { 
   BrowserRouter as Router,
   Route,
@@ -18,7 +16,7 @@ class App extends Component {
         <Header />
         <Navbar />
         {this.props.children}
-        <Footer />
+        /*<Footer />*/
       </div>
 
     );
